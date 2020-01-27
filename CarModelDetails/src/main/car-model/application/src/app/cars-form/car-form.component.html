@@ -1,0 +1,62 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #carForm="ngForm">
+      <div class="form-group">
+        <label for="vinNumber">Vin Number</label>
+        <input type="text" [(ngModel)]="car.vinNumber" class="form-control" id="vinNumber" name="vinNumber"
+          placeholder="Enter car's vin number" required #name="ngModel">
+      </div>
+      <div [hidden]="!car.pristine" class="alert alert-danger">car's vin number is required</div>
+
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" [(ngModel)]="car.brand" class="form-control" id="brand" name="brand"
+          placeholder="Enter car's brand" required #brand="ngModel">
+      </div>
+      <div [hidden]="!brand.pristine" class="alert alert-danger">car's brand is required</div>
+
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" [(ngModel)]="car.model" class="form-control" id="model" name="model"
+          placeholder="Enter car's model" required #model="ngModel">
+      </div>
+      <div [hidden]="!model.pristine" class="alert alert-danger">car's model is required</div>
+
+      <div class="form-group">
+        <label for="veichleType">Veichle Type</label>
+        <input type="text" [(ngModel)]="car.veichleType" class="form-control" id="veichleType" name="veichleType"
+          placeholder="Enter car's veichleType" required #veichleType="ngModel">
+      </div>
+      <div [hidden]="!veichleType.pristine" class="alert alert-danger">car's veichle Type is required</div>
+
+      <div class="form-group">
+        <label for="plateCountry">Plate Country</label>
+        <input type="text" [(ngModel)]="car.plateCountry" class="form-control" id="plateCountry" name="plateCountry"
+          placeholder="Enter car's plateCountry" required #plateCountry="ngModel">
+      </div>
+      <div [hidden]="!plateCountry.pristine" class="alert alert-danger">car's Plate Countryis required</div>
+
+      <div class="form-group">
+        <label for="plateNumber">Plate Number</label>
+        <input type="text" [(ngModel)]="car.plateNumber" class="form-control" id="plateNumber" name="plateNumber"
+          placeholder="Enter car's plateNumber" required #plateNumber="ngModel">
+      </div>
+      <div [hidden]="!plateNumber.pristine" class="alert alert-danger">car's Plate Number is required</div>
+
+      <div class="form-group">
+        <label for="creationDate">Creation Date</label>
+        <input type="date" [(ngModel)]="car.creationDate" class="form-control" id="creationDate" name="creationDate"
+          placeholder="Enter car's creation Date" required #creationDate="ngModel">
+      </div>
+
+      <div class="form-group">
+          <label for="manifacturedCountry">Manifactured Country</label>
+          <input type="text" [(ngModel)]="car.manifacturedCountry" class="form-control" id="manifacturedCountry" name="manifacturedCountry"
+            placeholder="Enter car's manifacturedCountry" required #manifacturedCountry="ngModel">
+        </div>
+        <div [hidden]="!manifacturedCountry.pristine" class="alert alert-danger">car's manifactured Countryis required</div>
+
+      <button type="submit" [disabled]="!carForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
